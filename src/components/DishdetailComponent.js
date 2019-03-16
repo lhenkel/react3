@@ -33,7 +33,7 @@ class Dishdetail extends Component {
             const comments_div = comments.map((comment) => {
                 return (
                     <div key={comment.id} className="col-12 col-md-5 m-1">
-                        {comment.date} : {comment.comment}
+                        {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))} : {comment.comment}
                     </div>
                 );
             });
