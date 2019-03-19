@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 
-function RenderDishDetail({ dish }) {
+function RenderDish({ dish }) {
     if (dish != null) {
         return (
             <Card>
@@ -46,12 +46,12 @@ const DishDetail = (props) => {
         <div className="container">
             <div className="row">
                 <div class='col-12 col-md-6'>
-                    <RenderDish dish={props.dish} />
+                    <RenderDish dish={props.selectedDish} />
 
                 </div>
                 <div class='col-12 col-md-6'>
                     <h3>Comments:</h3>
-                    <RenderComments comments={props.dish.comments} />
+                    <RenderComments comments={props.comments} />
                 </div>
 
             </div>
@@ -61,4 +61,4 @@ const DishDetail = (props) => {
 
 
 
-export default Dishdetail;
+export default DishDetail;
