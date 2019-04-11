@@ -7,6 +7,7 @@ import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 
+import { CommentForm } from './CommentFormComponent';
 import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
