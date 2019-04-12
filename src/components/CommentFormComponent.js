@@ -30,10 +30,11 @@ class CommentForm extends Component {
         });
     }
 
-    handleComment(event) {
+    handleComment(values) {
         this.toggleCommentModal();
         console.log(this);
-        console.log(event);
+        console.log(values);
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
         //alert("rating: " + this.rating.value + " name: " + this.yourname.value
         //+ " comment: " + this.message.value);
         //alert('click');
@@ -62,9 +63,9 @@ class CommentForm extends Component {
                             </Row>
 
                             <Row className="form-group">
-                                <Label htmlFor="yourname" md={2}>Your Name</Label>
+                                <Label htmlFor="author" md={2}>Your Name</Label>
                                 <Col md={10}>
-                                    <Control.text model=".yourname" id="yourname" name="yourname"
+                                    <Control.text model=".author" id="author" name="author"
                                         placeholder="Your Name"
                                         className="form-control"
                                         validators={{
@@ -73,7 +74,7 @@ class CommentForm extends Component {
                                     />
                                     <Errors
                                         className="text-danger"
-                                        model=".yourname"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                             required: 'Required',
@@ -84,9 +85,9 @@ class CommentForm extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Label htmlFor="message" md={2}>Comment</Label>
+                                <Label htmlFor="comment" md={2}>Comment</Label>
                                 <Col md={10}>
-                                    <Control.textarea model=".message" id="message" name="message"
+                                    <Control.textarea model=".comment" id="comment" name="comment"
                                         rows="12"
                                         className="form-control" />
                                 </Col>
